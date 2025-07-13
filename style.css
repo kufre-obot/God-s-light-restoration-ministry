@@ -585,52 +585,29 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 904px) {
   .top-bar {
     display: none;
   }
 
   .mobile-menu {
     display: block;
+    order: 3;
   }
 
   .header-content {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
   }
 
-  nav {
-    width: 100%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 1rem 0;
-    display: none;
-    background: rgba(0, 0, 0, 0.95);
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  .live-prayer-btn {
-    font-size: 0.75rem;
-    border-radius: 10px;
-    white-space: nowrap;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .live-content,
-  .about-content,
-  .contact-content {
-    grid-template-columns: 1fr;
+  .logo {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    order: 1;
   }
 
   .logo-main {
@@ -640,24 +617,18 @@ footer {
   .logo-sub {
     font-size: 0.7rem;
   }
-}
 
-@media (max-width: 904px) {
-  /* Example: Adjust header layout */
-  .header-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  .live-prayer-btn {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+    white-space: nowrap;
+    border-radius: 10px;
+    order: 2;
   }
 
-  .mobile-menu {
-    display: block;
-  }
-  
-  .nav-wrapper {
+  nav {
     width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+    order: 4;
   }
 
   nav ul {
@@ -665,32 +636,16 @@ footer {
     align-items: flex-start;
     width: 100%;
     padding: 1rem 0;
-    background: rgba(0, 0, 0, 0.95);
     display: none;
+    background: rgba(0, 0, 0, 0.95);
   }
 
   nav ul.active {
     display: flex;
   }
 
-  .live-prayer-btn {
-    font-size: 0.8rem;
-    padding: 8px 16px;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
-    border-radius: 10px;
-  }
-
-  .logo-main {
-    font-size: 1.4rem;
-  }
-
-  .logo-sub {
-    font-size: 0.75rem;
-  }
-
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .live-content,
