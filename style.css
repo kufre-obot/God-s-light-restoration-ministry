@@ -171,6 +171,15 @@ nav a:hover {
   position: relative;
 }
 
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
 .hero-icon {
   position: absolute;
   top: 30%;
@@ -278,8 +287,8 @@ nav a:hover {
 }
 
 .social-link {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -592,52 +601,80 @@ footer {
 
   .mobile-menu {
     display: block;
-    order: 3;
   }
 
   .header-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    min-height: auto !important;
+    flex-direction: row !important;
   }
 
   .logo {
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    order: 1;
+    flex: 1;
+    min-width: 0;
+    max-width: calc(100% - 150px);
+    overflow: hidden;
+  }
+
+  .logo-text {
+    min-width: 0;
   }
 
   .logo-main {
-    font-size: 1.3rem;
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
   }
 
   .logo-sub {
-    font-size: 0.7rem;
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
+    line-height: 1;
+  }
+
+  .logo-icon {
+    width: clamp(30px, 8vw, 40px);
+    height: clamp(30px, 8vw, 40px);
+    flex-shrink: 0;
   }
 
   .live-prayer-btn {
-    font-size: 0.75rem;
-    padding: 8px 12px;
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
+    padding: clamp(6px, 2vw, 8px) clamp(8px, 2.5vw, 12px);
     white-space: nowrap;
-    border-radius: 10px;
-    order: 2;
+    border-radius: 8px;
+    flex-shrink: 0;
+    margin: 0 5px;
+  }
+
+  .mobile-menu {
+    flex-shrink: 0;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    padding: 0;
+    margin: 0;
   }
 
   nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    order: 4;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999;
   }
 
   nav ul {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding: 1rem 0;
+    padding: 1rem;
     display: none;
-    background: rgba(0, 0, 0, 0.95);
+    margin: 0;
   }
 
   nav ul.active {
@@ -648,6 +685,11 @@ footer {
     font-size: 2.5rem;
   }
 
+  .hero-image {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
   .live-content,
   .about-content,
   .contact-content {
@@ -655,12 +697,29 @@ footer {
   }
 }
 
-
-/* @media (min-width: 769px) {
-  nav ul .live-prayer-btn {
-    margin-left: auto;
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
   }
-} */
+  
+  .logo-main {
+    font-size: clamp(0.7rem, 2.5vw, 1rem);
+  }
+  
+  .logo-sub {
+    font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+  }
+  
+  .logo-icon {
+    width: clamp(25px, 6vw, 35px);
+    height: clamp(25px, 6vw, 35px);
+  }
+  
+  .live-prayer-btn {
+    font-size: clamp(0.5rem, 1.8vw, 0.7rem);
+    padding: clamp(4px, 1.5vw, 6px) clamp(6px, 2vw, 8px);
+  }
+}
 
 /* Scroll animations */
 .fade-in {
